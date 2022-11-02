@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../../../Assets/logo.svg';
 
 const Header = () => {
   return (
     <div>
-      <div className="navbar mb-12 bg-base-200">
+      <div className="navbar mb-12 bg-base-100">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -24,44 +25,60 @@ const Header = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+              className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
               <li>
-                <a>Home</a>
+                <Link to={'/home'}>Home</Link>
               </li>
               <li>
-                <a>About</a>
+                <Link to={'/about'}>About</Link>
               </li>
               <li>
-                <a>Services</a>
+                <Link to={'/serviecs'}>Services</Link>
               </li>
               <li>
-                <a>Blog</a>
+                <Link to={'/blog'}>Blog</Link>
               </li>
               <li>
-                <a>Contact</a>
+                <Link to={'/contact'}>Contact</Link>
               </li>
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case ">
+          <Link to={'/'} className="normal-case ">
             <img className="w-20" src={logo} alt="" />
-          </a>
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal p-0">
             <li>
-              <a>Home</a>
+              <Link to={'/home'} className="active:bg-violet-700 focus:ring  focus:ring-violet-500">
+                Home
+              </Link>
             </li>
             <li>
-              <a>About</a>
+              <Link
+                to={'/about'}
+                className="active:bg-violet-700 focus:ring  focus:ring-violet-500">
+                About
+              </Link>
             </li>
             <li>
-              <a>Services</a>
+              <Link
+                to={'/serviecs'}
+                className="active:bg-violet-700 focus:ring  focus:ring-violet-500">
+                Services
+              </Link>
             </li>
             <li>
-              <a>Blog</a>
+              <Link to={'/blog'} className="active:bg-violet-700 focus:ring  focus:ring-violet-500">
+                Blog
+              </Link>
             </li>
             <li>
-              <a>Contact</a>
+              <Link
+                to={'/contact'}
+                className="active:bg-violet-700 focus:ring  focus:ring-violet-500">
+                Contact
+              </Link>
             </li>
           </ul>
         </div>
@@ -87,17 +104,9 @@ const Header = () => {
               </svg>
             </form>
           </>
-          <a className="mx-2 lg:block hidden">
-            <button className="bg-transparent hover:bg-red-500 text-red-500 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded">
-              Button
-            </button>
-          </a>
-          <a href="">
-            <button
-              className="button button-gradient button-pink mr-3 hidden"
-              data-ripple-light="true">
-              Appointment
-            </button>
+
+          <a className="mx-2 font-semibold hover:text-white py-2 px-4 bg-transparent hover:bg-red-500 text-red-500 border border-red-500 hover:border-transparent rounded h-12 ">
+            <button className=" ">Appointment</button>
           </a>
         </div>
       </div>
