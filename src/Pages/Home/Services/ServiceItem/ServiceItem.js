@@ -11,12 +11,17 @@ const ServiceItem = ({ service }) => {
         </figure>
         <div className="card-body">
           <h2 className="card-title font-bold text-2xl">{title}</h2>
-          <p className="text-red-500 font-semibold">price : ${price}</p>
-          <div className="card-actions justify-end">
-            <button className="font-semibold hover:text-white  px-4  bg-transparent hover:bg-red-500 text-red-500 border border-red-500 hover:border-transparent rounded h-12  ">
-              Buy Now
-            </button>
+          <div className="flex justify-between items-center">
+            <div>
+              <p className="text-red-500 font-semibold">price : ${price}</p>
+            </div>
+            <div>
+              <button className="font-semibold hover:text-white  px-4  bg-transparent hover:bg-red-500 text-red-500 border border-red-500 hover:border-transparent rounded h-12  ">
+                Buy Now
+              </button>
+            </div>
           </div>
+          <div className="card-actions justify-end"></div>
         </div>
       </div>
     </div>

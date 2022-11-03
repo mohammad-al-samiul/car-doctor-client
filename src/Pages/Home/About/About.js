@@ -32,7 +32,9 @@ const About = () => {
                 the majority have suffered alteration in some form, by injected humour, or
                 randomised words which don't look even slightly believable.
               </p>
-              <button className="btn btn-primary">Get More info</button>
+              <button className="font-semibold hover:text-white  px-4  bg-transparent hover:bg-red-500 text-red-500 border border-red-500 hover:border-transparent rounded h-12  ">
+                Get More Info
+              </button>
             </div>
           </div>
         </div>
