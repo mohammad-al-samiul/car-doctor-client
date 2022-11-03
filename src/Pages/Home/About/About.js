@@ -1,14 +1,14 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
-import parts from '../../Assets/images/about_us/parts.jpg';
-import person from '../../Assets/images/about_us/person.jpg';
+import parts from '../../../Assets/images/about_us/parts.jpg';
+import person from '../../../Assets/images/about_us/person.jpg';
 import './About.css';
 
 const About = () => {
   return (
     <div>
-      <div className="hero rounded-xl mt-20">
-        <div className="hero-content flex-col lg:flex-row ">
+      <div className="hero rounded-xl mt-16">
+        <div className="hero-content flex-col lg:flex-row p-0">
           <div className="w-1/2 relative ">
             <img src={person} className="w-4/5 h-full rounded-lg shadow-2xl" alt="" />
             <img
