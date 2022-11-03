@@ -1,16 +1,38 @@
-import React from 'react';
+/* eslint-disable no-unused-vars */
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import image from '../../Assets/images/login/login.svg';
+import { AuthContext } from '../../Contexts/AuthProvider';
 
 const SignUp = () => {
+  const { createUser, profileUpdate, verifyEmail } = useContext(AuthContext);
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
     const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(name, email, password);
+    //console.log(name, email, password);
+
+    createUser(email, password)
+      .then((result) => {
+        toast.success('User Created Successfully');
+        form.reset();
+        const user = result.user;
+        console.log(user);
+        verifyEmail().then(() => {
+          toast.warning('Please Check Your Email');
+        });
+        profileUpdate(name)
+          .then(() => {
+            toast.success('Profile Updated');
+          })
+          .catch((error) => console.log(error.message));
+      })
+      .catch((error) => toast.error(error.message));
   };
+
   return (
     <div>
       <div className="hero min-h-screen  ">
@@ -58,7 +80,7 @@ const SignUp = () => {
                 <input
                   type="submit"
                   className="btn font-semibold text-white  px-4  bg-transparent bg-red-500  rounded h-12 border-none "
-                  value="Log in"
+                  value="Register"
                 />
               </div>
             </form>

@@ -1,8 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import logo from '../../../Assets/logo.svg';
+import { AuthContext } from '../../../Contexts/AuthProvider';
 
 const Header = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {
+        toast.success('Log out Success');
+      })
+      .catch((error) => console.log(error.message));
+  };
+  console.log(user);
   return (
     <>
       <div className="navbar mb-12 bg-base-100 px-2">
@@ -33,14 +45,34 @@ const Header = () => {
                 <Link to={'/about'}>About</Link>
               </li>
               <li>
-                <Link to={'/services'}>Services</Link>
-              </li>
-              <li>
-                <Link to={'/blog'}>Blog</Link>
-              </li>
-              <li>
                 <Link to={'/contact'}>Contact</Link>
               </li>
+              <li>
+                <button onClick={handleLogOut}>Log Out</button>
+              </li>
+
+              {user?.uid ? (
+                <>
+                  <li>
+                    <Link to={'/services'}>Services</Link>
+                  </li>
+                  <li>
+                    <Link to={'/blog'}>Blog</Link>
+                  </li>
+                  <li>
+                    <button onClick={handleLogOut}>Log Out</button>
+                  </li>
+                </>
+              ) : (
+                <>
+                  <li>
+                    <Link to={'/login'}>Sign In</Link>
+                  </li>
+                  <li>
+                    <Link to={'/signup'}>Sign Up</Link>
+                  </li>
+                </>
+              )}
             </ul>
           </div>
           <Link to={'/'} className="normal-case ">
@@ -63,23 +95,49 @@ const Header = () => {
             </li>
             <li>
               <Link
-                to={'/services'}
-                className="active:bg-violet-700 focus:ring  focus:ring-violet-500">
-                Services
-              </Link>
-            </li>
-            <li>
-              <Link to={'/blog'} className="active:bg-violet-700 focus:ring  focus:ring-violet-500">
-                Blog
-              </Link>
-            </li>
-            <li>
-              <Link
                 to={'/contact'}
                 className="active:bg-violet-700 focus:ring  focus:ring-violet-500">
                 Contact
               </Link>
             </li>
+            {user?.uid ? (
+              <>
+                <li>
+                  <Link
+                    to={'/services'}
+                    className="active:bg-violet-700 focus:ring  focus:ring-violet-500">
+                    Services
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to={'/blog'}
+                    className="active:bg-violet-700 focus:ring  focus:ring-violet-500">
+                    Blog
+                  </Link>
+                </li>
+                <li>
+                  <button onClick={handleLogOut}>Log Out</button>
+                </li>
+              </>
+            ) : (
+              <>
+                <li>
+                  <Link
+                    to={'/login'}
+                    className="active:bg-violet-700 focus:ring  focus:ring-violet-500">
+                    Sign In
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to={'/signup'}
+                    className="active:bg-violet-700 focus:ring  focus:ring-violet-500">
+                    Sign Up
+                  </Link>
+                </li>
+              </>
+            )}
           </ul>
         </div>
         <div className="navbar-end">

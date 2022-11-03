@@ -1,14 +1,28 @@
-import React from 'react';
+/* eslint-disable no-unused-vars */
+import React, { useContext } from 'react';
+import { toast } from 'react-toastify';
 import image from '../../Assets/images/login/login.svg';
+import { AuthContext } from '../../Contexts/AuthProvider';
 
 const Login = () => {
+  const { signIn } = useContext(AuthContext);
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
     console.log(email, password);
+
+    signIn(email, password)
+      .then((result) => {
+        form.reset();
+        toast.success('Log in Success');
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => toast.error(error.message));
   };
+
   return (
     <div>
       <div className="hero min-h-screen  ">
