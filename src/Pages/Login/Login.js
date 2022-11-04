@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import image from '../../Assets/images/login/login.svg';
 import { AuthContext } from '../../Contexts/AuthProvider';
@@ -9,11 +9,17 @@ import { AuthContext } from '../../Contexts/AuthProvider';
 const Login = () => {
   const { signIn, googleSignIn, githubSignIn } = useContext(AuthContext);
 
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || '/';
+
   const handleReset = () => {};
 
   const handleGoogleSignin = () => {
     googleSignIn()
       .then((result) => {
+        navigate(from, { replace: true });
         toast.success('Google Sign in Successfully');
         const user = result.user;
         console.log(user);
@@ -26,6 +32,7 @@ const Login = () => {
   const handleGithubSignin = () => {
     githubSignIn()
       .then((result) => {
+        navigate(from, { replace: true });
         toast.success('Github Sign in Successfully');
         const user = result.user;
         console.log(user);
@@ -45,6 +52,7 @@ const Login = () => {
     signIn(email, password)
       .then((result) => {
         form.reset();
+        navigate(from, { replace: true });
         toast.success('Log in Success');
         const user = result.user;
         console.log(user);

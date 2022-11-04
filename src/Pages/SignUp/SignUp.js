@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import image from '../../Assets/images/login/login.svg';
 import { AuthContext } from '../../Contexts/AuthProvider';
@@ -8,10 +8,11 @@ import { AuthContext } from '../../Contexts/AuthProvider';
 const SignUp = () => {
   const { createUser, profileUpdate, verifyEmail, googleSignIn, githubSignIn } =
     useContext(AuthContext);
-
+  const navigate = useNavigate();
   const handleGoogleSignin = () => {
     googleSignIn()
       .then((result) => {
+        navigate('/services');
         toast.success('Google Sign in Successfully');
         const user = result.user;
         console.log(user);
@@ -24,6 +25,7 @@ const SignUp = () => {
   const handleGithubSignin = () => {
     githubSignIn()
       .then((result) => {
+        navigate('/services');
         toast.success('Github Sign in Successfully');
         const user = result.user;
         console.log(user);
@@ -45,6 +47,7 @@ const SignUp = () => {
       .then((result) => {
         toast.success('User Created Successfully');
         form.reset();
+        navigate('/services');
         const user = result.user;
         console.log(user);
         verifyEmail().then(() => {
