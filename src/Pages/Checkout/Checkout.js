@@ -1,9 +1,26 @@
-import React from 'react';
+/* eslint-disable no-unused-vars */
+import React, { useContext } from 'react';
+import img from '../../Assets/images/checkout/checkout.png';
+import { AuthContext } from '../../Contexts/AuthProvider';
+import './Checkout.css';
 
 const Checkout = () => {
+  const { user } = useContext(AuthContext);
   return (
-    <>
-      <div className="flex pb-10 items-center">
+    <div>
+      <div className="px-4 ">
+        <div className="relative w-full ">
+          <div className=" w-full image-gradient">
+            <img src={img} className="w-full " />
+          </div>
+
+          <div className="absolute justify-start align-center transform -translate-y-1/2 top-1/4 left-5  px-24 w-2/4 my-10">
+            <h1 className="text-white font-bold text-4xl pt-10">Check Out</h1>
+          </div>
+        </div>
+      </div>
+
+      <div className="flex pb-10 items-center mt-10">
         <div className="form-control w-full px-4">
           <input
             type="text"
@@ -33,6 +50,8 @@ const Checkout = () => {
             type="text"
             placeholder="Your Email"
             className="input input-bordered input-accent w-full"
+            defaultValue={user?.email}
+            readOnly
           />
         </div>
       </div>
@@ -46,7 +65,7 @@ const Checkout = () => {
           Order Confirm
         </button>
       </div>
-    </>
+    </div>
   );
 };
 
