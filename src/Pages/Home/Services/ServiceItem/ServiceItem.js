@@ -1,8 +1,9 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ServiceItem = ({ service }) => {
-  const { title, img, price } = service;
+  const { _id, title, img, price } = service;
   return (
     <div>
       <div className="card card-compact w-96 h-96 bg-base-100 shadow-xl">
@@ -16,9 +17,11 @@ const ServiceItem = ({ service }) => {
               <p className="text-red-500 font-semibold">price : ${price}</p>
             </div>
             <div>
-              <button className="font-semibold hover:text-white  px-4  bg-transparent hover:bg-red-500 text-red-500 border border-red-500 hover:border-transparent rounded h-12  ">
-                Buy Now
-              </button>
+              <Link to={`/checkout/${_id}`}>
+                <button className="font-semibold hover:text-white  px-4  bg-transparent hover:bg-red-500 text-red-500 border border-red-500 hover:border-transparent rounded h-12  ">
+                  Buy Now
+                </button>
+              </Link>
             </div>
           </div>
           <div className="card-actions justify-end"></div>
