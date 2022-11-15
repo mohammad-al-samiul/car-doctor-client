@@ -58,6 +58,9 @@ const Header = () => {
                     <Link to={'/services'}>Services</Link>
                   </li>
                   <li>
+                    <Link to={'/orders'}>Orders</Link>
+                  </li>
+                  <li>
                     <Link to={'/blog'}>Blog</Link>
                   </li>
                   <li>
@@ -108,6 +111,13 @@ const Header = () => {
                     to={'/services'}
                     className="active:bg-violet-700 focus:ring  focus:ring-violet-500">
                     Services
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to={'/orders'}
+                    className="active:bg-violet-700 focus:ring  focus:ring-violet-500">
+                    Orders
                   </Link>
                 </li>
                 <li>

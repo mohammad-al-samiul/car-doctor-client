@@ -36,7 +36,7 @@ const BannerItem = ({ slide }) => {
         </div>
 
         <div className="absolute flex justify-end transform -translate-y-1/2 left-5 right-5 bottom-0">
-          <a href={`slide${prev}`} className="btn btn-circle mr-4  border-none">
+          <a href={`#slide${prev}`} className="btn btn-circle mr-4  border-none">
             ❮
           </a>
           <a

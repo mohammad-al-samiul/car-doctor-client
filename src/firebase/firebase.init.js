@@ -15,7 +15,7 @@ const firebaseConfig = {
 };
 
 // alt + cltr -> multiple select
-// cltr + left arrow -> left side copy
+// cltr +Shift + left arrow -> left side copy
 // fn + pageDown -> end
 // fn + pageUp -> home
 
