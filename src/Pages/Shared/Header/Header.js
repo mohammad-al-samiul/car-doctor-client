@@ -11,7 +11,7 @@ const Header = () => {
     logOut()
       .then(() => {
         navigate('/');
-        toast.warning('Log out Success');
+        toast.success('Log out Success');
       })
       .catch((error) => console.log(error.message));
   };

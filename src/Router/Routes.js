@@ -1,6 +1,7 @@
 import Main from '../Layout/Main';
 import Blog from '../Pages/Blog/Blog';
 import Checkout from '../Pages/Checkout/Checkout';
+import Contact from '../Pages/Contact/Contact';
 import About from '../Pages/Home/About/About';
 import Home from '../Pages/Home/Home';
 import Services from '../Pages/Home/Services/Services';
@@ -32,10 +33,17 @@ const router = createBrowserRouter([
         path: '/services',
         element: <Services />
       },
-
+      {
+        path: '/contact',
+        element: <Contact />
+      },
       {
         path: '/orders',
-        element: <Orders />
+        element: (
+          <PrivateRoute>
+            <Orders />
+          </PrivateRoute>
+        )
       },
       {
         path: '/blog',
