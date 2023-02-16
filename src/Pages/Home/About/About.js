@@ -9,7 +9,7 @@ const About = () => {
     <div>
       <div className="hero rounded-xl mt-16">
         <div className="hero-content flex-col lg:flex-row p-0">
-          <div className="w-1/2 relative ">
+          <div className="lg:w-1/2 relative ">
             <img src={person} className="w-4/5 h-full rounded-lg shadow-2xl" alt="" />
             <img
               src={parts}
@@ -17,13 +17,13 @@ const About = () => {
               alt=""
             />
           </div>
-          <div className="w-1/2">
+          <div className="lg:w-1/2">
             <div>
-              <h1 className="text-5xl font-bold my-5 pt-10">
+              <h1 className="lg:text-5xl font-bold my-5 pt-10">
                 <span className="text-red-500 font-bold text-2xl mb-3">About Us</span> <br />
-                We are qualified <br /> & of experience <br /> in this field
+                We are qualified & of experience in this field
               </h1>
-              <p className="py-4">
+              <p className="lg:py-4">
                 There are many variations of passages of Lorem Ipsum available, but the majority
                 have suffered alteration in some form, by injected humour, or randomised words which
                 don't look even slightly believable.

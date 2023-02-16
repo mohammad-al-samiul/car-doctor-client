@@ -6,8 +6,8 @@ const BannerItem = ({ slide }) => {
   const { image, id, prev, next } = slide;
   return (
     <>
-      <div id={`slide${id}`} className="carousel-item relative w-full">
-        <div className="carousel-image">
+      <div id={`slide${id}`} className="carousel-item relative w-full ">
+        <div className="carousel-image ">
           <img src={image} className="w-full" />
         </div>
 
