@@ -4,7 +4,6 @@ import React from 'react';
 
 const OrderRow = ({ order, handleDelete, handleUpdate }) => {
   const { serviceName, price, img, _id, status } = order;
-  console.log(status);
   return (
     <>
       <tr>
@@ -13,10 +12,10 @@ const OrderRow = ({ order, handleDelete, handleUpdate }) => {
         </td>
 
         <td>
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center lg:space-x-3 ">
             <div className="avatar">
-              <div className=" w-28 h-28 rounded-lg ">
-                <img src={img} alt="" />
+              <div className="lg:w-28 lg:h-28 rounded-lg ">
+                <img className="hidden lg:block" src={img} alt="" />
               </div>
             </div>
             <div>

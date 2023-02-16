@@ -3,7 +3,7 @@ import React from 'react';
 
 const Blog = () => {
   return (
-    <div>
+    <div className="mb-20">
       <div className="accordion" id="accordionExample">
         <div className="accordion-item bg-white border border-gray-200">
           <h2 className="accordion-header mb-0" id="headingOne">

@@ -55,7 +55,7 @@ const Orders = () => {
   };
 
   return (
-    <div>
+    <div className="mb-20">
       <div className="overflow-x-auto w-full">
         <table className="table w-full">
           <thead>
@@ -63,7 +63,7 @@ const Orders = () => {
               <th className="rounded-none"></th>
               <th>Name</th>
               <th>Price</th>
-              <th>Favorite Color</th>
+              <th> Color</th>
               <th>Status</th>
             </tr>
           </thead>

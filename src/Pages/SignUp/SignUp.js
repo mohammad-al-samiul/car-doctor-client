@@ -63,7 +63,7 @@ const SignUp = () => {
   };
 
   return (
-    <div>
+    <div className="mb-20">
       <div className="hero min-h-screen  ">
         <div className="hero-content flex-col lg:flex-row">
           <div className="text-center lg:text-left pr-28">
@@ -94,14 +94,7 @@ const SignUp = () => {
                   className="input input-bordered"
                 />
               </div>
-              <div>
-                <div className="form-control">
-                  <label htmlFor="image" className="block mb-2 text-sm">
-                    Select Image:
-                  </label>
-                  <input type="file" id="image" name="image" accept="image/*" required />
-                </div>
-              </div>
+
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Password</span>
@@ -116,7 +109,7 @@ const SignUp = () => {
               <div className="form-control mt-6">
                 <input
                   type="submit"
-                  className="btn font-semibold text-white  px-4  bg-transparent bg-red-500  rounded h-12 border-none "
+                  className="btn font-semibold text-gray-700 hover:text-white  px-4  bg-transparent bg-red-500  rounded h-12 border-gray-500 "
                   value="Register"
                 />
               </div>
