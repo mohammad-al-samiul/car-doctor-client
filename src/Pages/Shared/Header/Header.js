@@ -48,9 +48,6 @@ const Header = () => {
               <li>
                 <Link to={'/contact'}>Contact</Link>
               </li>
-              <li>
-                <button onClick={handleLogOut}>Log Out</button>
-              </li>
 
               {user?.uid ? (
                 <>

@@ -20,11 +20,11 @@ const BannerItem = ({ slide }) => {
             </h1>
             <p className="lg:text-lg pb-4  text-white">
               There Are Many Variations Of Passages Of Available, But The Majority Have Sufferex
-              Alternation In Some Form
+              Alternation In Some Form Lorem.
             </p>
           </div>
 
-          <div className="absolute flex justify-start transform -translate-y-1/2 left-5 top-2/4 lg:px-24 w-2/4 mt-24">
+          <div className="absolute flex justify-start transform -translate-y-1/2 left-5 top-2/4 lg:px-24 w-2/4 mt-12">
             <button className="font-semibold hover:text-white  px-4  bg-transparent hover:bg-red-500 text-red-500 border border-red-500 hover:border-transparent rounded h-12  mr-5">
               Discover More
             </button>

@@ -7,7 +7,7 @@ import './About.css';
 const About = () => {
   return (
     <div>
-      <div className="hero rounded-xl mt-16">
+      <div className="hero rounded-xl mt-16 mb-24 px-5">
         <div className="hero-content flex-col lg:flex-row p-0">
           <div className="lg:w-1/2 relative ">
             <img src={person} className="w-4/5 h-full rounded-lg shadow-2xl" alt="" />
