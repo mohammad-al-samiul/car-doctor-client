@@ -94,6 +94,14 @@ const SignUp = () => {
                   className="input input-bordered"
                 />
               </div>
+              <div>
+                <div className="form-control">
+                  <label htmlFor="image" className="block mb-2 text-sm">
+                    Select Image:
+                  </label>
+                  <input type="file" id="image" name="image" accept="image/*" required />
+                </div>
+              </div>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Password</span>

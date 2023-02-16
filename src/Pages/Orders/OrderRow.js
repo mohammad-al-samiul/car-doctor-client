@@ -2,8 +2,8 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 
-const OrderRow = ({ order, handleDelete, handleUpdate, status }) => {
-  const { serviceName, price, img, _id } = order;
+const OrderRow = ({ order, handleDelete, handleUpdate }) => {
+  const { serviceName, price, img, _id, status } = order;
   console.log(status);
   return (
     <>

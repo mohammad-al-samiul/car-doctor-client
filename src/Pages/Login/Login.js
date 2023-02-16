@@ -100,7 +100,7 @@ const Login = () => {
               <div className="form-control mt-6">
                 <input
                   type="submit"
-                  className="btn font-semibold text-white  px-4  bg-transparent bg-red-500  rounded h-12 border-none "
+                  className="font-semibold hover:text-white px-4  bg-transparent hover:bg-slate-600  border border-slate-500 hover:border-transparent rounded h-12 "
                   value="Log in"
                 />
               </div>

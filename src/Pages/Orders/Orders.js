@@ -12,7 +12,7 @@ const Orders = () => {
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, [user?.email]);
-  console.log(orders);
+  //console.log(orders);
 
   const handleDelete = (id) => {
     const proceed = window.confirm('Are you sure want to delete');
@@ -33,27 +33,25 @@ const Orders = () => {
   };
 
   const handleUpdate = (id) => {
-    const proceed = window.confirm('Are you want to approved');
-    if (proceed) {
-      fetch(`http://localhost:5000/orders/${id}`, {
-        method: 'Patch',
-        headers: {
-          'content-type': 'application/json'
-        },
-        body: JSON.stringify({ status: 'Approved' })
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          if (data.modifiedCount > 0) {
-            const remaining = orders.filter((order) => order._id !== id);
-            const approving = orders.find((order) => order._id === id);
-            approving.status = 'Approved';
-            const newOrders = [approving, ...remaining];
-            setOrders(newOrders);
-          }
-        });
-    }
+    fetch(`http://localhost:5000/orders/${id}`, {
+      method: 'PATCH',
+      headers: {
+        'content-type': 'application/json',
+        authorization: `Bearer ${localStorage.getItem('genius-token')}`
+      },
+      body: JSON.stringify({ status: 'Approved' })
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        //console.log(data);
+        if (data.modifiedCount > 0) {
+          const remaining = orders.filter((odr) => odr._id !== id);
+          const approving = orders.find((odr) => odr._id === id);
+          approving.status = 'Approved';
+          const newOrders = [approving, ...remaining];
+          setOrders(newOrders);
+        }
+      });
   };
 
   return (

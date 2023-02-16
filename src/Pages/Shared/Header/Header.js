@@ -152,29 +152,11 @@ const Header = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <>
-            <form action="" className="relative w-max mr-4">
-              <input
-                type="search"
-                className="peer cursor-pointer relative z-10 h-11 w-11 rounded-full border bg-transparent pl-6 outline-none focus:w-full focus:cursor-text focus:border-grey-300 focus:pl-16 focus:pr-4"
-              />
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="absolute inset-y-0 my-auto h-12 w-12 border-r border-transparent stroke-gray-500 px-3.5 peer-focus:border-grey-300 peer-focus:stroke-grey-800"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth="2">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                />
-              </svg>
-            </form>
-          </>
-
-          <a className="">
+          <a
+            target={'_blank'}
+            href="https://github.com/mohammad-al-samiul"
+            className=""
+            rel="noreferrer">
             <button className="font-semibold hover:text-white  px-4  bg-transparent hover:bg-red-500 text-red-500 border border-red-500 hover:border-transparent rounded h-12  ">
               Appointment
             </button>

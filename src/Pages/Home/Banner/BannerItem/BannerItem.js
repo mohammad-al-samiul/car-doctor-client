@@ -12,19 +12,19 @@ const BannerItem = ({ slide }) => {
         </div>
 
         <div>
-          <div className="absolute justify-start align-center transform -translate-y-1/2 top-1/4 left-5  px-24 w-2/4 my-10">
-            <h1 className="text-6xl font-bold text-white pb-6">
+          <div className="absolute justify-start align-center transform -translate-y-1/2 top-1/4 left-5  lg:px-24 w-2/4 my-10">
+            <h1 className="lg:text-6xl font-bold text-white lg:pb-6">
               Affordable <br />
               Price For Car <br />
               Servicing
             </h1>
-            <p className="text-lg  text-white">
+            <p className="lg:text-lg pb-4  text-white">
               There Are Many Variations Of Passages Of Available, But The Majority Have Sufferex
               Alternation In Some Form
             </p>
           </div>
 
-          <div className="absolute flex justify-start transform -translate-y-1/2 left-5 top-2/4 px-24 w-2/4 mt-20">
+          <div className="absolute flex justify-start transform -translate-y-1/2 left-5 top-2/4 lg:px-24 w-2/4 mt-24">
             <button className="font-semibold hover:text-white  px-4  bg-transparent hover:bg-red-500 text-red-500 border border-red-500 hover:border-transparent rounded h-12  mr-5">
               Discover More
             </button>
